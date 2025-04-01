@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.envrc
+*.venv
+
+# Dependency files
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Logs and debug
+logs/
+*.log
+
+# Database and migrations
+*.sqlite3
+*.db
+migrations/
+
+# Python cache files
+.cache/
+*.egg-info/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Docker
+docker-compose.override.yml
+*.dockerfile

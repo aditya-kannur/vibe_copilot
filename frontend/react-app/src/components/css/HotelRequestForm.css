@@ -1,0 +1,90 @@
+.hotel-request-form-container {
+  width: 80%;
+  margin: 20px auto;
+  background: linear-gradient(to right, #4a00e0, #fcb045);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-request-form-title {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.hotel-request-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.hotel-request-form-group {
+  display: inline-block;
+  width: 30%;
+  margin: 10px 1.5%;
+}
+
+.hotel-request-full-width {
+  width: 97%;
+}
+
+.hotel-request-form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.hotel-request-form-group input,
+.hotel-request-form-group select,
+.hotel-request-form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hotel-request-form-group textarea {
+  height: 60px;
+  resize: none;
+}
+
+.hotel-request-submit-btn {
+  display: flex;
+  justify-self: center;
+  width: 10%;
+  padding: 15px 25px;
+  background-color: #0b0c0c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.hotel-request-submit-btn:hover {
+  background-color: #080808;
+}
+
+.hotel-request-back-btn {
+  background-color: white;
+  color: #4a00e0;
+  border: 1px solid #4a00e0;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hotel-request-back-btn:hover {
+  background-color: #4a00e0;
+  color: white;
+}
+
+
+.hotel-request-form-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
