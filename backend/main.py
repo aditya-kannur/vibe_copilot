@@ -13,5 +13,5 @@ app.add_middleware(
     allow_headers=["*"],  
 )
 
-# Include your API routes
+# API routes
 app.include_router(router)

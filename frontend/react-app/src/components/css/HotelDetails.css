@@ -1,0 +1,92 @@
+.hotel-details-container {
+    width: 90%;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    
+}
+
+.hotel-header {
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #4a00e0, #fcb045);
+    border-radius: 8px 8px 0 0;
+}
+
+.display-header{
+    background: linear-gradient(to right, #4a00e0, #fcb045);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    border-radius: 60px;
+    color: white;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.detail-value {
+    color: #555;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.back-button {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+.update-button {
+    padding: 10px 20px;
+    background-color: #4a00e0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.update-button:hover {
+    background-color: #3a00b0;
+}

@@ -11,21 +11,21 @@ MONGO_URI = os.getenv("MONGO_URI")
 
 # Check if URI is present
 if not MONGO_URI:
-    print("❌ MONGO_URI not found in .env file")
+    print(" No Mongo URI found")
     exit()
 
-# Connect to MongoDB
+# MongoDB connection
 client = MongoClient(MONGO_URI, server_api=ServerApi('1'))
-db = client["vibe_copilot"]  # Replace with your actual database name
+db = client["vibe_copilot"] 
 
-# Test Connection
+# Testing
 try:
     client.admin.command("ping")
-    print("✅ Successfully connected to MongoDB!")
+    print("Successfully connected")
 except Exception as e:
-    print("❌ MongoDB connection error:", e)
+    print("MongoDB connection error:", e)
 
 
-# Function to get the database instance
+# Database instance
 def get_db():
     return db

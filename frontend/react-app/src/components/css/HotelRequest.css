@@ -8,9 +8,9 @@
 }
 
 .table-container {
-    max-height: 400px; /* Set height to enable scrolling */
-    overflow-y: auto; /* Allows vertical scrolling */
-    overflow-x: auto; /* Allows horizontal scrolling */
+    max-height: 100%; 
+    overflow-y: auto; 
+    overflow-x: auto; 
     border: 1px solid #ddd;
     border-radius: 8px;
     background: #fafafa;
@@ -20,28 +20,28 @@
 .hotel-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 900px; /* Ensures table doesn't shrink */
-    table-layout: fixed; /* Ensures uniform column width */
+    min-width: 900px; 
+    table-layout: fixed; 
 }
 
 .hotel-table thead {
-    background: linear-gradient(to right, #007bff, #ffb005); /* Gradient background */
+    background: linear-gradient(to right, #007bff, #ffb005); 
     color: white;
     position: sticky;
     top: 0;
     z-index: 10;
-    font-size: 14px;;
     font-family: 'Arial', sans-serif; /* Updated font */
+    font-size: 12px;
 }
 
 .hotel-table th {
-    font-weight: bold;
+    font-weight: light;
     text-align: center;
     padding: 12px;
     height: 5vh;
     white-space: nowrap;
-    text-transform: uppercase; /* Ensures header text is capitalized */
-    font-family: 'Arial', sans-serif; /* Ensuring consistent font */
+    text-transform: uppercase; 
+    font-family: 'Arial', sans-serif; 
 }
 
 .hotel-table thead tr {
@@ -49,32 +49,36 @@
 }
 
 .hotel-table thead th:first-child {
-    border-top-left-radius: 8px;
+    border-top-left-radius: 4px;
 }
 
 .hotel-table thead th:last-child {
-    border-top-right-radius: 8px;
+    border-top-right-radius: 4px;
 }
 
 .hotel-table th, .hotel-table td {
-    padding: 10px;
+    padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-    white-space: nowrap; /* Prevents text from wrapping */
+    white-space: nowrap; 
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.hotel-table th{
+    padding: 10px;
 }
 
 .hotel-table tbody tr {
     display: table-row;
     width: 100%;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .hotel-table tbody tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Custom scrollbar */
 .table-container::-webkit-scrollbar {
     width: 6px;
     height: 8px;
@@ -87,4 +91,37 @@
 
 .table-container::-webkit-scrollbar-track {
     background-color: #eee;
+}
+
+
+.actions-cell {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-btn {
+    color: #7c7b7b;
+}
+
+.edit-btn:hover {
+    background-color: rgba(74, 0, 224, 0.1);
+}
+
+.view-btn {
+    color: #7c7b7b;
+}
+
+.view-btn:hover {
+    background-color: rgba(0, 123, 255, 0.1);
 }

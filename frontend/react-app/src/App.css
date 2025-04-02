@@ -1,17 +1,13 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;  /* Center content instead of pushing it to the right */
-  align-items: center;
-  height: 100vh;
   background-color: #f4f4f4;
   box-sizing: border-box;
 }
 
 .scrollbar {
   width: 5vw;
-  background-color: palegoldenrod;
+  background-color: rgb(73, 55, 240);
   height: 100vh;
   position: fixed;
   left: 0;

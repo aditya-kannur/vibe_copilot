@@ -5,6 +5,7 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
 .hotel-request-form-header {
@@ -57,14 +58,15 @@
 .hotel-request-form-group input,
 .hotel-request-form-group select,
 .hotel-request-form-group textarea {
-  width: 100%;
+  /* width: 100%; */
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .hotel-request-form-group textarea {
-  height: 60px;
+  height: 30px;
+  display: inline;
   resize: none;
 }
 
@@ -84,4 +86,64 @@
 
 .hotel-request-submit-btn:hover {
   background-color: #080808;
+}
+
+/* Add these new styles to your existing CSS */
+.hotel-request-form-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.hotel-request-back-arrow {
+  position: absolute;
+  left: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.hotel-request-back-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.hotel-request-update-btn {
+  padding: 15px 25px;
+  background-color: #4a00e0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hotel-request-update-btn:hover {
+  background-color: #3a00b0;
+}
+
+.hotel-request-delete-btn {
+  padding: 15px 25px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hotel-request-delete-btn:hover {
+  background-color: #c62828;
 }
