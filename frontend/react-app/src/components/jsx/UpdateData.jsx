@@ -29,7 +29,7 @@ const UpdateHotelRequestForm = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/hotel_requests/${id}`)
+      .get(`https://vibe-copilot-77jk.onrender.com/hotel_requests/${id}`)
       .then((response) => {
         if (response.data) {
           setFormData(response.data);
@@ -45,7 +45,7 @@ const UpdateHotelRequestForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://127.0.0.1:8000/hotel_requests/${id}`, formData);
+      await axios.put(`https://vibe-copilot-77jk.onrender.com/hotel_requests/${id}`, formData);
       toast.success("Hotel request updated successfully!", {
         position: "top-right",
         autoClose: 3000,

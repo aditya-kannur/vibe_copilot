@@ -9,7 +9,7 @@ function HotelRequest({ filter }) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/hotel_requests")
+        fetch("https://vibe-copilot-77jk.onrender.com/hotel_requests")
             .then((response) => response.json())
             .then((data) => {
                 const reversedData = data.reverse();

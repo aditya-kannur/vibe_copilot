@@ -8,7 +8,7 @@ const HotelDetails = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/hotel_requests/${id}`)
+        fetch(`https://vibe-copilot-77jk.onrender.com/hotel_requests/${id}`)
             .then((response) => response.json())
             .then((data) => setHotelRequest(data))
             .catch((error) => console.error("Error fetching hotel request:", error));

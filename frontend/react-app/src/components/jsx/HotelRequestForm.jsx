@@ -27,7 +27,7 @@ const HotelRequestForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/hotel_requests", formData);
+      await axios.post("https://vibe-copilot-77jk.onrender.com/hotel_requests", formData);
       toast.success("Hotel request submitted successfully!", {
         position: "top-right",
         autoClose: 3000,
