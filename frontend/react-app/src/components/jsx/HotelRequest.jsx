@@ -63,14 +63,13 @@ function HotelRequest({ filter }) {
                             <th>Actions</th>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>Email</th>
                             <th>Destination</th>
                             <th>Check-in</th>
                             <th>Check-out</th>
                             <th>Rooms</th>
                             <th>Room Type</th>
                             <th>Status</th>
-                            <th>Manager Approval</th>
-                            <th>Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -96,14 +95,13 @@ function HotelRequest({ filter }) {
                                 </td>
                                 <td>{request.employee_id}</td>
                                 <td>{request.employee_name}</td>
+                                <td>{request.email || "N/A"}</td>
                                 <td>{request.destination}</td>
                                 <td>{request.check_in || "N/A"}</td>
                                 <td>{request.check_out || "N/A"}</td>
                                 <td>{request.number_of_rooms}</td>
                                 <td>{request.room_type}</td>
-                                <td>{request.booking_status}</td>
                                 <td>{request.manager_approval || "N/A"}</td>
-                                <td>{request.email || "N/A"}</td>
                             </tr>
                         ))}
                     </tbody>

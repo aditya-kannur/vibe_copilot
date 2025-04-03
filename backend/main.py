@@ -8,8 +8,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://vibe-copilot.vercel.app",
-        "http://localhost:3000",
-        "https://localhost:3000"  
+        "http://localhost:5173",
+        "https://localhost:5174"  
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],  
