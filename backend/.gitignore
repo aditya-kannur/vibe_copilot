@@ -20,4 +20,4 @@ migrations/
 *.iml
 docker-compose.override.yml
 *.dockerfile
-.env
+*.env
