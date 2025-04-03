@@ -4,17 +4,18 @@ from routes.hotel_requests import router
 
 app = FastAPI()
 
-# CORS 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://vibe-copilot.vercel.app",
-        "http://localhost:3000"  # Keep for local development
+        "http://localhost:3000",
+        "https://localhost:3000"  
     ],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],  
     allow_headers=["*"],
+    expose_headers=["*"],  
+    max_age=600  
 )
 
-# API routes
 app.include_router(router)
