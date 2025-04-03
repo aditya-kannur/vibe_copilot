@@ -1,6 +1,6 @@
 # Hotel Request Management System
 
-A full-stack application for managing hotel booking requests, built with:
+A full-stack application for managing booking requests, built with:
 - **Frontend**: React.js + Vite
 - **Backend**: FastAPI (Python)
 - **Database**: MongoDB
