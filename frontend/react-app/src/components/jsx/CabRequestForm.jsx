@@ -28,7 +28,7 @@ const CabRequestForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8000/cab_requests", formData);
+            await axios.post("https://vibe-copilot-77jk.onrender.com/cab_requests", formData);
             toast.success("Cab request submitted successfully!", {
                 position: "top-right",
                 autoClose: 3000,

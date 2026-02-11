@@ -13,7 +13,7 @@ class CabRequest(BaseModel):
     pickup_date: date
     pickup_time: str 
     number_of_passengers: int
-    cab_type: str # Sedan, SUV, etc.
+    cab_type: str 
     manager_approval: Optional[str] = None
     special_requests: Optional[str] = None
     booking_confirmation_number: Optional[str] = None

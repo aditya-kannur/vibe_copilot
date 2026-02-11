@@ -8,7 +8,7 @@ class TransportRequest(BaseModel):
     project_id: str
     mobile_number: str
     email: EmailStr
-    transport_type: str # Train, Bus, etc.
+    transport_type: str 
     from_location: str
     to_location: str
     travel_date: date

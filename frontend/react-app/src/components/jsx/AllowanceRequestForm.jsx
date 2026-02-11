@@ -26,7 +26,7 @@ const AllowanceRequestForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8000/allowance_requests", formData);
+            await axios.post("https://vibe-copilot-77jk.onrender.com/allowance_requests", formData);
             toast.success("Allowance request submitted successfully!", {
                 position: "top-right",
                 autoClose: 3000,

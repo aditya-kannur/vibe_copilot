@@ -9,7 +9,7 @@ function FlightRequest({ filter }) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:8000/flight_requests")
+        fetch("https://vibe-copilot-77jk.onrender.com/flight_requests")
             .then((response) => response.json())
             .then((data) => {
                 const reversedData = data.reverse();

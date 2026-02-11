@@ -13,7 +13,7 @@ class FlightRequest(BaseModel):
     departure_date: date
     return_date: Optional[date] = None
     airline_preference: Optional[str] = None
-    travel_class: str # Economy, Business, First
+    travel_class: str 
     meal_preference: Optional[str] = None
     manager_approval: Optional[str] = None
     special_requests: Optional[str] = None

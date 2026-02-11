@@ -9,7 +9,7 @@ function TransportRequest({ filter }) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:8000/transport_requests")
+        fetch("https://vibe-copilot-77jk.onrender.com/transport_requests")
             .then((response) => response.json())
             .then((data) => {
                 const reversedData = data.reverse();

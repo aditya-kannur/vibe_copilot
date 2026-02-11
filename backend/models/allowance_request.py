@@ -14,5 +14,5 @@ class AllowanceRequest(BaseModel):
     request_date: date
     manager_approval: Optional[str] = None
     receipt_url: Optional[str] = None
-    payment_status: Optional[str] = None # Pending, Paid
+    payment_status: Optional[str] = None 
     remarks: Optional[str] = None

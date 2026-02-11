@@ -29,7 +29,7 @@ const FlightRequestForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8000/flight_requests", formData);
+            await axios.post("https://vibe-copilot-77jk.onrender.com/flight_requests", formData);
             toast.success("Flight request submitted successfully!", {
                 position: "top-right",
                 autoClose: 3000,

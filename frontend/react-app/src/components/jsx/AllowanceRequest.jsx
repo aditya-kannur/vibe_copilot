@@ -9,7 +9,7 @@ function AllowanceRequest({ filter }) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:8000/allowance_requests")
+        fetch("https://vibe-copilot-77jk.onrender.com/allowance_requests")
             .then((response) => response.json())
             .then((data) => {
                 const reversedData = data.reverse();
