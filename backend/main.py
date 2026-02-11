@@ -11,13 +11,12 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://vibe-copilot.vercel.app",
-        "https://vibe-copilot-git-feat-implement-90b885-aditya-kannurs-projects.vercel.app",
         "http://localhost:5173",
         "https://localhost:5174"  
     ],
+    allow_origin_regex="https://vibe-copilot.*\.vercel\.app",
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],  
+    allow_methods=["*"],  
     allow_headers=["*"],
     expose_headers=["*"],  
     max_age=600  
