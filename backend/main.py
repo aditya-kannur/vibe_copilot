@@ -12,6 +12,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://vibe-copilot.vercel.app",
+        "https://vibe-copilot-git-feat-implement-90b885-aditya-kannurs-projects.vercel.app",
         "http://localhost:5173",
         "https://localhost:5174"  
     ],
