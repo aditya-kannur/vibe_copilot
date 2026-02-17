@@ -72,7 +72,7 @@ const UpdateHotelRequestForm = () => {
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this request?")) {
       try {
-        await axios.delete(`http://127.0.0.1:8000/hotel_requests/${id}`);
+        await axios.delete(`https://vibe-copilot-77jk.onrender.com/hotel_requests/${id}`);
         toast.success("Hotel request deleted successfully!", {
           position: "top-right",
           autoClose: 3000,
@@ -111,7 +111,7 @@ const UpdateHotelRequestForm = () => {
         draggable
         pauseOnHover
       />
-      
+
       <div className="hotel-request-form-header">
         <button
           className="hotel-request-back-arrow"
@@ -122,7 +122,7 @@ const UpdateHotelRequestForm = () => {
         <h2 className="hotel-request-form-title">Update Hotel Request</h2>
         <div style={{ width: "40px" }}></div> {/* Spacer for alignment */}
       </div>
-      
+
       <form onSubmit={handleSubmit} className="hotel-request-form">
         <div className="hotel-request-form-group">
           <label>Employee ID:</label>
@@ -134,7 +134,7 @@ const UpdateHotelRequestForm = () => {
             disabled
           />
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Employee Name:</label>
           <input
@@ -145,7 +145,7 @@ const UpdateHotelRequestForm = () => {
             required
           />
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Mobile Number:</label>
           <input
@@ -156,7 +156,7 @@ const UpdateHotelRequestForm = () => {
             required
           />
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Email:</label>
           <input
@@ -167,7 +167,7 @@ const UpdateHotelRequestForm = () => {
             required
           />
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Destination:</label>
           <input
@@ -178,7 +178,7 @@ const UpdateHotelRequestForm = () => {
             required
           />
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Check-in Date:</label>
           <input
@@ -189,7 +189,7 @@ const UpdateHotelRequestForm = () => {
             required
           />
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Check-out Date:</label>
           <input
@@ -200,7 +200,7 @@ const UpdateHotelRequestForm = () => {
             required
           />
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Number of Rooms:</label>
           <select
@@ -215,7 +215,7 @@ const UpdateHotelRequestForm = () => {
             <option value="3">3</option>
           </select>
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Room Type:</label>
           <select
@@ -230,7 +230,7 @@ const UpdateHotelRequestForm = () => {
             <option value="Suite">Suite</option>
           </select>
         </div>
-        
+
         <div className="hotel-request-form-group hotel-request-full-width">
           <label>Special Requests:</label>
           <textarea
@@ -239,7 +239,7 @@ const UpdateHotelRequestForm = () => {
             onChange={handleChange}
           ></textarea>
         </div>
-        
+
         <div className="hotel-request-form-group hotel-request-full-width">
           <label>Hotel Preferences:</label>
           <textarea
@@ -248,7 +248,7 @@ const UpdateHotelRequestForm = () => {
             onChange={handleChange}
           ></textarea>
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Booking Confirmation Number:</label>
           <input
@@ -258,7 +258,7 @@ const UpdateHotelRequestForm = () => {
             onChange={handleChange}
           />
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Manager Approval Status:</label>
           <select
@@ -271,7 +271,7 @@ const UpdateHotelRequestForm = () => {
             <option value="Rejected">Rejected</option>
           </select>
         </div>
-        
+
         <div className="hotel-request-form-group">
           <label>Confirmation Email:</label>
           <input
@@ -281,13 +281,13 @@ const UpdateHotelRequestForm = () => {
             onChange={handleChange}
           />
         </div>
-        
+
         <div className="form-buttons-container">
           <button type="submit" className="hotel-request-update-btn">
             Update
           </button>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="hotel-request-delete-btn"
             onClick={handleDelete}
           >

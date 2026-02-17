@@ -1,43 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEdit, FaEye } from "react-icons/fa";
-import "../../components/css/HotelRequest.css";
+import "../../components/css/FlightRequest.css";
 
-function HotelRequest({ filter }) {
-    const [hotelRequests, setHotelRequests] = useState([]);
+function FlightRequest({ filter }) {
+    const [flightRequests, setFlightRequests] = useState([]);
     const [filteredRequests, setFilteredRequests] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("https://vibe-copilot-77jk.onrender.com/hotel_requests")
+        fetch("https://vibe-copilot-77jk.onrender.com/flight_requests")
             .then((response) => response.json())
             .then((data) => {
                 const reversedData = data.reverse();
-                setHotelRequests(reversedData);
+                setFlightRequests(reversedData);
                 setFilteredRequests(reversedData);
             })
-            .catch((error) => console.error("Error fetching hotel requests:", error));
+            .catch((error) => console.error("Error fetching flight requests:", error));
     }, []);
 
     useEffect(() => {
         const currentDate = new Date();
         currentDate.setHours(0, 0, 0, 0);
 
-        const filtered = hotelRequests.filter(request => {
-            if (!request.check_in || !request.check_out) return false;
+        const filtered = flightRequests.filter(request => {
+            if (!request.departure_date) return false;
 
-            const checkInDate = new Date(request.check_in);
-            const checkOutDate = new Date(request.check_out);
-            checkInDate.setHours(0, 0, 0, 0);
-            checkOutDate.setHours(0, 0, 0, 0);
+            const deptDate = new Date(request.departure_date);
+            deptDate.setHours(0, 0, 0, 0);
 
             switch (filter) {
                 case "All":
                     return true;
                 case "Upcoming":
-                    return currentDate >= checkInDate;
+                    return deptDate >= currentDate;
                 case "Completed":
-                    return currentDate > checkOutDate;
+                    return deptDate < currentDate; // Simplified logic as 'return_date' is optional
                 case "Cancelled":
                     return request.manager_approval?.toLowerCase() === "rejected";
                 default:
@@ -46,29 +44,24 @@ function HotelRequest({ filter }) {
         });
 
         setFilteredRequests(filtered);
-    }, [filter, hotelRequests]);
-
-    const handleRowClick = (employeeId, e) => {
-        if (!e.target.closest('.action-btn')) {
-            navigate(`/hotel-details/${employeeId}`);
-        }
-    };
+    }, [filter, flightRequests]);
 
     return (
-        <div className="hotel-request-container">
+        <div className="flight-request-container">
             <div className="table-wrapper">
-                <table className="hotel-table">
+                <table className="flight-table">
                     <thead>
                         <tr>
                             <th>Actions</th>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Destination</th>
-                            <th>Check-in</th>
-                            <th>Check-out</th>
-                            <th>Rooms</th>
-                            <th>Room Type</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Departure</th>
+                            <th>Return</th>
+                            <th>Airline</th>
+                            <th>Class</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -76,19 +69,21 @@ function HotelRequest({ filter }) {
                         {filteredRequests.map((request, index) => (
                             <tr
                                 key={index}
-                                onClick={(e) => handleRowClick(request.employee_id, e)}
                                 className="clickable-row"
                             >
                                 <td className="actions-cell">
+                                    {/* Placeholders for View/Edit */}
                                     <button
                                         className="action-btn view-btn"
-                                        onClick={() => navigate(`/hotel-details/${request.employee_id}`)}
+                                        disabled
+                                        title="View Details (Not Implemented)"
                                     >
                                         <FaEye />
                                     </button>
                                     <button
                                         className="action-btn edit-btn"
-                                        onClick={() => navigate(`/admin/hotel-edit/${request.employee_id}`)}
+                                        disabled
+                                        title="Edit (Not Implemented)"
                                     >
                                         <FaEdit />
                                     </button>
@@ -96,12 +91,13 @@ function HotelRequest({ filter }) {
                                 <td>{request.employee_id}</td>
                                 <td>{request.employee_name}</td>
                                 <td>{request.email || "N/A"}</td>
-                                <td>{request.destination}</td>
-                                <td>{request.check_in || "N/A"}</td>
-                                <td>{request.check_out || "N/A"}</td>
-                                <td>{request.number_of_rooms}</td>
-                                <td>{request.room_type}</td>
-                                <td>{request.manager_approval || "N/A"}</td>
+                                <td>{request.from_city}</td>
+                                <td>{request.to_city}</td>
+                                <td>{request.departure_date || "N/A"}</td>
+                                <td>{request.return_date || "N/A"}</td>
+                                <td>{request.airline_preference || "Any"}</td>
+                                <td>{request.travel_class}</td>
+                                <td>{request.manager_approval || "Pending"}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -111,4 +107,4 @@ function HotelRequest({ filter }) {
     );
 }
 
-export default HotelRequest;
+export default FlightRequest;
