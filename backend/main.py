@@ -14,10 +14,9 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "https://localhost:5174",
-        "https://vibe-copilot.vercel.app",
-        "https://vibe-copilot-git-feat-implement-90b885-aditya-kannurs-projects.vercel.app"
+        "https://vibe-copilot.vercel.app"
     ],
-    allow_origin_regex=r"https://vibe-copilot-.*\.vercel\.app",
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"],
@@ -26,16 +25,7 @@ app.add_middleware(
 )
 
 #  MANUAL PREFLIGHT HANDLER 
-@app.options("/{rest_of_path:path}")
-async def preflight_handler(request: Request, rest_of_path: str):
-    response = Response()
-    origin = request.headers.get("Origin")
-    if origin:
-        response.headers["Access-Control-Allow-Origin"] = origin
-    response.headers["Access-Control-Allow-Methods"] = "*"
-    response.headers["Access-Control-Allow-Headers"] = "*"
-    response.headers["Access-Control-Allow-Credentials"] = "true"
-    return response
+
 
 # ROUTERS
 app.include_router(hotel_router)
